@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tugas_besar/screens/kategori/tambah_kategori.dart';
 import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -167,7 +168,7 @@ class _Home extends State<Home> {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.purple.shade50,
+                  color: Colors.white,
                   borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(10.0),
                     topLeft: Radius.circular(10.0),
@@ -210,14 +211,14 @@ class _Home extends State<Home> {
                       ),
                       child: Container(
                         margin: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-                        decoration: BoxDecoration(
-                          color: Colors.purple.shade50,
-                          borderRadius: const BorderRadius.all(
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(
                             Radius.circular(10),
                           ),
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
-                              color: Colors.grey,
+                              color: Color(0xFF0000ff),
                               blurRadius: 7,
                               offset: Offset(6.0, 6.0),
                             ),
@@ -241,6 +242,28 @@ class _Home extends State<Home> {
                 ),
               ),
             ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF0000ff),
+                    elevation: 10,
+                    shape: RoundedRectangleBorder(
+                        //to set border radius to button
+                        borderRadius: BorderRadius.circular(15)),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TambahKategori()),
+                    );
+                  },
+                  child: const Text("Tambah List",
+                      style: TextStyle(
+                        fontFamily: 'Nunito',
+                        fontWeight: FontWeight.bold,
+                      ))),
+            )
           ],
         ));
   }
