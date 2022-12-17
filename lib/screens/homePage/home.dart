@@ -203,8 +203,8 @@ class _Home extends State<Home> {
                         if (direction == DismissDirection.startToEnd) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => EditKategori()),
-                          );
+                            MaterialPageRoute(builder: (context) => EditKategori(category: listCategory[index]),
+                          ));
                         }else{                       
                           final response =
                               await CRUDNetwork().deleteCategory(listCategory[index]);
