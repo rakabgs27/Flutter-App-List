@@ -156,24 +156,25 @@ class _Login extends State<Login> {
                                 borderRadius: BorderRadius.circular(15)),
                           ),
                           onPressed: () {
-                            if (_formKey.currentState!.validate() &&
-                                Token == '') {
-                              doLogin();
-                            } else if (_formKey.currentState!.validate() &&
-                                Token != '') {
-                              doLogin();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  backgroundColor: Colors.white,
-                                  content: Text(
-                                    'Validation Successful',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            } else {}
+                            // if (_formKey.currentState!.validate() &&
+                            //     Token == '') {
+                            //   doLogin();
+                            // } else if (_formKey.currentState!.validate() &&
+                            //     Token != '') {
+                            //   doLogin();
+                            //   ScaffoldMessenger.of(context).showSnackBar(
+                            //     const SnackBar(
+                            //       backgroundColor: Colors.white,
+                            //       content: Text(
+                            //         'Validation Successful',
+                            //         style: TextStyle(
+                            //           color: Colors.black,
+                            //         ),
+                            //       ),
+                            //     ),
+                            //   );
+                            // } else {}
+                            doLogin();
                           },
                           child: const Text("Login",
                               style: TextStyle(

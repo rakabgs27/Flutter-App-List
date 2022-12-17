@@ -5,7 +5,7 @@ import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Network {
-  final String _baseUrl = 'http://192.168.1.8:8000/api/';
+  final String _baseUrl = 'http://192.168.1.20:8000/api/';
   final String token = '';
 
   Future<Response> login(String email, String password, String deviceId) async {
@@ -22,8 +22,8 @@ class Network {
     final response = await post(url, body: body, headers: headers);
     var data = json.decode(response.body);
     _save('token', data['token']);
-    _save('name', data['name']);
-    _save('email', data['email']);
+    // _save('name', data['name']);
+    // _save('email', data['email']);
 
     return response;
   }
