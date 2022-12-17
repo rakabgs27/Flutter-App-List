@@ -28,6 +28,23 @@ class Network {
     return response;
   }
 
+  Future<Response> register(String name, String email, String password, String deviceId) async {
+  final url = Uri.parse(_baseUrl + 'auth/register');
+  final body = {
+    'name' : name,
+    'email' : email,
+    'password' : password,
+    'password_confirmation' : password,
+    'device_name' : deviceId,
+  };
+  final headers = {
+    'Accept': 'application/json',
+  };
+
+  final response = await post(url, body: body, headers: headers);
+  return response;
+ }
+
   _save(String key, String data) async {
     final prefs = await SharedPreferences.getInstance();
     //const key = 'token';

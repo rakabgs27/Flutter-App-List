@@ -104,6 +104,7 @@ class _Login extends State<Login> {
         appBar: AppBar(
           title: const Text("Login Page"),
           backgroundColor: const Color(0xFF0000ff),
+          automaticallyImplyLeading: false,
         ),
         body: Container(
           padding: const EdgeInsets.all(30),

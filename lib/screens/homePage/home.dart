@@ -15,6 +15,7 @@ class _Home extends State<Home> {
         appBar: AppBar(
           title: const Text("Home Page"),
           backgroundColor: const Color(0xFF0000ff),
+          automaticallyImplyLeading: false,
         ),
         body: Container(
          child: Text("Masuk"),
