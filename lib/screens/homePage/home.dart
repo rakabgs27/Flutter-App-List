@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tugas_besar/api/crud_network.dart';
 import 'package:flutter_tugas_besar/screens/kategori/tambah_kategori.dart';
 import 'dart:convert';
 
@@ -6,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_tugas_besar/models/category_model.dart';
 
 import '../../api/network.dart';
+import '../kategori/edit_kategori.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -61,6 +63,9 @@ class _Home extends State<Home> {
     final response = await Network().logout(token);
     print(response.body);
   }
+   
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -194,6 +199,18 @@ class _Home extends State<Home> {
                           ),
                         ),
                       ),
+                      onDismissed: (DismissDirection direction) async {
+                        if (direction == DismissDirection.startToEnd) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => EditKategori()),
+                          );
+                        }else{                       
+                          final response =
+                              await CRUDNetwork().deleteCategory(listCategory[index]);
+                          print(response.body);
+                          }
+                      },
                       secondaryBackground: Container(
                         color: Colors.redAccent,
                         child: Padding(
